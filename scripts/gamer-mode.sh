@@ -1,15 +1,21 @@
 #!/bin/bash
 
-# Mata as instancias do outro modo
-pkill -TERM brave
-pkill -TERM code
+source ../config.sh
 
-# Garantia que os programas fecharam para asa configurações de tela
+# Mata as instancias do outro modo
+pkill -TERM "$NAVEGADOR_PROCESS"
+pkill -TERM "$EDITOR_PROCESS"
+
+# Garantia que os programas fecharam para as configurações de tela
 sleep 1
 
 # Configura o monitor principal
-xrandr --output DP-4 --primary --mode 1920x1080 --rate 144 \
-       --output DP-0 --off
+xrandr --output "$MONITOR_PRINCIPAL" \
+       --primary \
+       --mode "$RESOLUCAO_PRINCIPAL" \
+       --rate "$HZ_PRINCIPAL" \
+       --output "$MONITOR_SECUNDARIO" \
+       --off
 
 # Abre a Steam
-flatpak run com.valvesoftware.Steam &
+$STEAM_CMD &

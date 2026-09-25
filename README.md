@@ -475,3 +475,8 @@ Algumas ideias para futuras versões:
 * [ ] Interface gráfica
 * [ ] Mais modos além de Work/Gamer
 * [ ] Configuração automática dos atalhos
+
+## Licença
+
+Este projeto está disponível sob a licença MIT.
+Consulte o arquivo [LICENSE](LICENSE) para mais informações.
